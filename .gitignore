@@ -2,3 +2,4 @@ venv/
 app.py
 app1.py
 temprun.py
+credentials.json
