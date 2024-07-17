@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Company</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Investment Bank</a>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="my-4 text-center">Register Your Company</h2>
+                <form method="POST" action="{{ url_for('registerCompany') }}">
+                    <div class="form-group">
+                        <label for="comp_id">Company ID</label>
+                        <input type="text" class="form-control" id="comp_id" name="comp_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company_name">Company Name</label>
+                        <input type="text" class="form-control" id="company_name" name="company_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_name">Contact Name</label>
+                        <input type="text" class="form-control" id="contact_name" name="contact_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_email">Contact Email</label>
+                        <input type="email" class="form-control" id="contact_email" name="contact_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_phone">Contact Phone</label>
+                        <input type="text" class="form-control" id="contact_phone" name="contact_phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="industry">Industry</label>
+                        <input type="text" class="form-control" id="industry" name="industry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comp_password">Password</label>
+                        <input type="password" class="form-control" id="comp_password" name="comp_password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

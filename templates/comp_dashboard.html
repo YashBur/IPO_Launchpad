@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Company Dashboard</h1>
+        <div class="timeline">
+            <ul class="list-group">
+                <li class="list-group-item {% if status >= 1 %}list-group-item-success{% endif %}">
+                    Decision to Issue IPO
+                    {% if status == 0 %}
+                    <a href="{{ url_for('update_timeline', stage=1) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 2 %}list-group-item-success{% endif %}">
+                    Hire Investment Bank
+                    {% if status == 1 %}
+                    <a href="{{ url_for('update_timeline', stage=2) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 3 %}list-group-item-success{% endif %}">
+                    Underwriting
+                    {% if status == 2 %}
+                    <a href="{{ url_for('update_timeline', stage=3) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 4 %}list-group-item-success{% endif %}">
+                    Due Diligence
+                    {% if status == 3 %}
+                    <a href="{{ url_for('update_timeline', stage=4) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 5 %}list-group-item-success{% endif %}">
+                    SEBI Approval
+                    {% if status == 4 %}
+                    <a href="{{ url_for('update_timeline', stage=5) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 6 %}list-group-item-success{% endif %}">
+                    Roadshows
+                    {% if status == 5 %}
+                    <a href="{{ url_for('update_timeline', stage=6) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 7 %}list-group-item-success{% endif %}">
+                    Book Building
+                    {% if status == 6 %}
+                    <a href="{{ url_for('update_timeline', stage=7) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 8 %}list-group-item-success{% endif %}">
+                    Open for Subscription
+                    {% if status == 7 %}
+                    <a href="{{ url_for('update_timeline', stage=8) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 9 %}list-group-item-success{% endif %}">
+                    Share Allotment
+                    {% if status == 8 %}
+                    <a href="{{ url_for('update_timeline', stage=9) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+                <li class="list-group-item {% if status >= 10 %}list-group-item-success{% endif %}">
+                    Stock Listing
+                    {% if status == 9 %}
+                    <a href="{{ url_for('update_timeline', stage=10) }}" class="btn btn-primary btn-sm float-right">Mark as Complete</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

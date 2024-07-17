@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Timeline</title>
+    <style>
+        .timeline-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .timeline-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .green-button {
+            background-color: green;
+        }
+        .blue-button {
+            background-color: blue;
+        }
+        .arrow {
+            width: 30px;
+            height: 10px;
+            border-top: 2px solid black;
+            border-right: 2px solid black;
+            transform: rotate(45deg);
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        {% for stage in timeline_stages %}
+        <a href="{{ stage.url }}" class="timeline-button {% if loop.index <= completed_stages %}green-button{% else %}blue-button{% endif %}">{{ stage.name }}</a>
+        {% if not loop.last %}
+                <div class="arrow"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!-- templates/timelineFolder/decision-IPO.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision to Issue IPO</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f5ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #34495e;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        ul {
+            text-align: left;
+            margin-left: 40px;
+        }
+        li {
+            color: #34495e;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            resize: none;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Why Companies Launch Their IPOs</h1>
+        <p>
+            An Initial Public Offering (IPO) is a significant milestone for many companies. It marks the transition from being privately owned to becoming publicly traded on stock exchanges. There are several compelling reasons why companies choose to go public:
+        </p>
+        <ul>
+            <li>Access to Capital: IPOs allow companies to raise substantial amounts of capital from the public markets, enabling them to fund growth initiatives, expand operations, or pay down debt.</li>
+            <li>Liquidity: Going public provides existing shareholders, including founders, employees, and early investors, with an opportunity to sell their shares and realize value.</li>
+            <li>Enhanced Profile: A public listing can enhance a company's visibility and credibility in the market, potentially attracting new customers, partners, and talented employees.</li>
+            <li>Acquisition Currency: Publicly traded companies often have an advantage in acquiring other companies by using their stock as a currency for mergers and acquisitions.</li>
+            <li>Market Valuation: The IPO process involves valuation by the market, which can establish a benchmark for the company's worth and future growth prospects.</li>
+        </ul>
+        <p>
+            These reasons illustrate why an IPO can be a strategic decision for companies aiming to achieve long-term growth and success in the competitive business landscape.
+        </p>
+        
+        <form action="{{ url_for('decision_ipo') }}" method="POST">
+            <label for="reason">Why does your company want to issue an IPO?</label><br>
+            <textarea id="reason" name="reason" rows="6" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwriting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="email"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button[type="submit"], button[type="button"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .document-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Underwriting</h1>
+
+    <!-- Display the document link if it exists -->
+    {% if document_link %}
+        <div class="document-link">
+            <p>Document Link: <a href="{{ document_link }}" target="_blank">{{ document_link }}</a></p>
+        </div>
+    {% endif %}
+
+    <!-- Underwriting Form -->
+    <form method="POST" action="{{ url_for('underwriting') }}">
+        <label for="email">Add Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Add Email</button>
+        <button type="button" id="add-email">Add Another Email</button>
+    </form>
+
+    <!-- JavaScript to add new email fields dynamically -->
+    <script>
+        document.getElementById('add-email').addEventListener('click', function() {
+            var emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.name = 'email';
+            emailInput.required = true;
+            emailInput.placeholder = 'Enter another email';
+            emailInput.style.width = '300px';
+            emailInput.style.padding = '8px';
+            emailInput.style.fontSize = '16px';
+            emailInput.style.border = '1px solid #ccc';
+            emailInput.style.borderRadius = '4px';
+            emailInput.style.marginBottom = '10px';
+            this.parentNode.insertBefore(emailInput, this);
+        });
+    </script>
+</body>
+</html>
